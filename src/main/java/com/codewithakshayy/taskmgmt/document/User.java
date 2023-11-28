@@ -1,5 +1,7 @@
 package com.codewithakshayy.taskmgmt.document;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,9 +18,10 @@ import lombok.Data;
 public class User {
 
 	@Id
-	private String id;
+	private String uid;
 	private String username;
 	private String email;
 	private String password;
+	private Date registrationDateTime;
 
 }
