@@ -13,4 +13,14 @@ public class GlobalExceptionHandler {
 		return new ErrorResponse(HttpStatus.CONFLICT.value(), alreadyExistsException.getMessage());
 	}
 
+	@ExceptionHandler(value = NotFoundException.class)
+	public @ResponseBody ErrorResponse handleNotFoundException(NotFoundException notFoundException) {
+		return new ErrorResponse(HttpStatus.NOT_FOUND.value(), notFoundException.getMessage());
+	}
+
+	@ExceptionHandler(value = NullPointerException.class)
+	public @ResponseBody ErrorResponse handleNullPointerException(NullPointerException nullPointerException) {
+		return new ErrorResponse(HttpStatus.NO_CONTENT.value(), nullPointerException.getMessage());
+	}
+
 }
