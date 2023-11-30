@@ -23,4 +23,8 @@ public class GlobalExceptionHandler {
 		return new ErrorResponse(HttpStatus.NO_CONTENT.value(), nullPointerException.getMessage());
 	}
 
+	public @ResponseBody ErrorResponse handleNoRecordsException(NoRecordsException noRecordsException) {
+		return new ErrorResponse(HttpStatus.NO_CONTENT.value(), noRecordsException.getMessage());
+	}
+
 }
